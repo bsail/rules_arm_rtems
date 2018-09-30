@@ -152,6 +152,8 @@ toolchain {
   cxx_flag: "-I"
   cxx_flag: "external/com_arm_developer_toolchain_gcc_5_4/arm-none-eabi/include/5.4.1/arm-none-eabi"
   cxx_flag: "-I"
+  cxx_flag: "external/com_arm_developer_toolchain_gcc_5_4/arm-none-eabi/include"
+  cxx_flag: "-I"
   cxx_flag: "external/com_arm_developer_toolchain_gcc_5_4/arm-none-eabi/include/5.4.1"
   cxx_flag: "-I"
   cxx_flag: "external/com_arm_developer_toolchain_gcc_5_4/arm-none-eabi/libc/usr/include"
