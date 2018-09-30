@@ -162,11 +162,11 @@ toolchain {
   linker_flag: "-specs=nosys.specs"
   # linker_flag: "-lstdc++"
 
-  #linker_flag: "-Lexternal/com_arm_developer_toolchain_gcc_5_4/arm-none-eabi/lib/hard/"
-  #linker_flag: "-Lexternal/com_arm_developer_toolchain_gcc_5_4/arm-none-eabi/lib/thumb/"
-  #linker_flag: "-Lexternal/com_arm_developer_toolchain_gcc_5_4/arm-none-eabi/lib/"
-  #linker_flag: "-Lexternal/com_arm_developer_toolchain_gcc_5_4/lib/gcc/arm-none-eabi/5.4.1/"
-  #linker_flag: "-Bexternal/com_arm_developer_toolchain_gcc_5_4/arm-none-eabi/bin"
+  linker_flag: "-Lexternal/com_arm_developer_toolchain_gcc_5_4/arm-none-eabi/lib/hard/"
+  linker_flag: "-Lexternal/com_arm_developer_toolchain_gcc_5_4/arm-none-eabi/lib/thumb/"
+  linker_flag: "-Lexternal/com_arm_developer_toolchain_gcc_5_4/arm-none-eabi/lib/"
+  linker_flag: "-Lexternal/com_arm_developer_toolchain_gcc_5_4/lib/gcc/arm-none-eabi/5.4.1/"
+  linker_flag: "-Bexternal/com_arm_developer_toolchain_gcc_5_4/arm-none-eabi/bin"
 
   # Anticipated future default.
   # This makes GCC and Clang do what we want when called through symlinks.
