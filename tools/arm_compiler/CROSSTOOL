@@ -27,7 +27,7 @@ toolchain {
   abi_libc_version: "arm-none-eabi"
   builtin_sysroot: ""
   compiler: "compiler"
-  host_system_name: "local"
+  host_system_name: "cortex-m3"
   needsPic: true
   supports_gold_linker: false
   supports_incremental_linker: false
@@ -38,7 +38,7 @@ toolchain {
   supports_thin_archives: false
   target_libc: "cortex-m3-none"
   target_cpu: "cortex-m3"
-  target_system_name: "cortex-m3-none"
+  target_system_name: "cortex-m3-none-system"
   toolchain_identifier: "cortex-m3-none"
 
   tool_path { name: "ar" path: "/usr/bin/arm-none-eabi-ar" }
