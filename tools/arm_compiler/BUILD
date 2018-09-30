@@ -34,7 +34,7 @@ cc_toolchain_suite(
     # target_cpu | compiler
     toolchains = {
         "armeabi-v7a|gcc": "cc-compiler-armeabi-v7a",
-        "cortex-m3|arm-none-eabi": "cc-compiler-cortex-m3",
+        "cortex-m3|gcc": "cc-compiler-cortex-m3",
         "k8|compiler": "cc-compiler-k8",
     },
 )

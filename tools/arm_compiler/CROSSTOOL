@@ -23,10 +23,10 @@ default_toolchain {
 }
 
 toolchain {
-  abi_version: "arm-none-eabi"
-  abi_libc_version: "arm-none-eabi"
+  abi_version: "gcc"
+  abi_libc_version: "gcc"
   builtin_sysroot: ""
-  compiler: "compiler"
+  compiler: "gcc"
   host_system_name: "cortex-m3"
   needsPic: true
   supports_gold_linker: false
@@ -98,10 +98,10 @@ toolchain {
 }
 
 # toolchain {
-#   abi_version: "arm-none-eabi"
-#   abi_libc_version: "arm-none-eabi"
+#   abi_version: "gcc"
+#   abi_libc_version: "gcc"
 #   builtin_sysroot: ""
-#   compiler: "arm-none-eabi"
+#   compiler: "gcc"
 #   host_system_name: "local"
 #   needsPic: true
 #   supports_gold_linker: false
