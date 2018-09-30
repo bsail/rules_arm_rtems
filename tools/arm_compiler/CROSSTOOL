@@ -27,7 +27,7 @@ toolchain {
   abi_libc_version: "arm-none-eabi"
   builtin_sysroot: ""
   compiler: "arm-none-eabi"
-  host_system_name: "armeabi-v7a"
+  host_system_name: "local"
   needsPic: true
   supports_gold_linker: false
   supports_incremental_linker: false
