@@ -140,7 +140,7 @@ toolchain {
   compiler_flag: "-march=armv7-m"
   compiler_flag: "-mthumb"
   compiler_flag: "-fno-exceptions"
-  compiler_flag: "-fshort-wchar"
+  # compiler_flag: "-fshort-wchar"
   compiler_flag: "-fdata-sections"
   compiler_flag: "-ffunction-sections"
 
@@ -160,7 +160,7 @@ toolchain {
   linker_flag: "-march=armv7-m"
   linker_flag: "-mthumb"
   linker_flag: "-specs=nosys.specs"
-  linker_flag: "-lstdc++"
+  # linker_flag: "-lstdc++"
 
   #linker_flag: "-Lexternal/com_arm_developer_toolchain_gcc_5_4/arm-none-eabi/lib/hard/"
   #linker_flag: "-Lexternal/com_arm_developer_toolchain_gcc_5_4/arm-none-eabi/lib/thumb/"
