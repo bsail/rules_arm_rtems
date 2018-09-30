@@ -115,7 +115,7 @@ toolchain {
   supports_normalizing_ar: true
   supports_start_end_lib: false
   supports_thin_archives: true
-  target_libc: "gcc"
+  target_libc: "cortex-m3-none"
   target_cpu: "cortex-m3"
   target_system_name: "cortex-m3-none-system"
   toolchain_identifier: "cortex-m3-none"
