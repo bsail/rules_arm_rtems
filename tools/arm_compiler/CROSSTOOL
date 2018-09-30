@@ -103,7 +103,7 @@ default_toolchain {
 
 toolchain {
   abi_version: "gcc"
-  abi_libc_version: "cortex-m3-none"
+  abi_libc_version: "glibc_2.19"
   builtin_sysroot: ""
   compiler: "gcc"
   host_system_name: "cortex-m3"
@@ -115,7 +115,7 @@ toolchain {
   supports_normalizing_ar: true
   supports_start_end_lib: false
   supports_thin_archives: true
-  target_libc: "cortex-m3-none"
+  target_libc: "glibc_2.19"
   target_cpu: "cortex-m3"
   target_system_name: "cortex-m3-none-system"
   toolchain_identifier: "cortex-m3-none"
