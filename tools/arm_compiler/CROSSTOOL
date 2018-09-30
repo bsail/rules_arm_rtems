@@ -17,6 +17,11 @@ default_toolchain {
   toolchain_identifier: "local"
 }
 
+default_toolchain {
+  cpu: "cortex-m3"
+  toolchain_identifier: "cortex-m3-none"
+}
+
 toolchain {
   abi_version: "gcc"
   abi_libc_version: "glibc_2.19"
