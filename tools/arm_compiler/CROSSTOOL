@@ -77,6 +77,10 @@ toolchain {
   cxx_flag: "external/com_arm_developer_toolchain_gcc_5_4/arm-none-eabi/libc/usr/include"
   cxx_flag: "-std=c++11"
 
+  cxx_builtin_include_directory: "%package(@com_arm_developer_toolchain_gcc_5_4//include)%"
+  cxx_builtin_include_directory: "%package(@com_arm_developer_toolchain_gcc_5_4//arm-none-eabi/include)%"
+  cxx_builtin_include_directory: "%package(@com_arm_developer_toolchain_gcc_5_4//lib/gcc/arm-none-eabi/5.4.1/include)%"
+
   # cxx_builtin_include_directory: "/usr/include"
   tool_path { name: "gcov" path: "arm_none_gcc/arm-none-eabi-gcov" }
 
