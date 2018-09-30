@@ -23,10 +23,10 @@ default_toolchain {
 }
 
 toolchain {
-  abi_version: "gcc"
-  abi_libc_version: "gcc"
+  abi_version: "arm-none-eabi"
+  abi_libc_version: "arm-none-eabi"
   builtin_sysroot: ""
-  compiler: "gcc"
+  compiler: "arm-none-eabi"
   host_system_name: "armeabi-v7a"
   needsPic: true
   supports_gold_linker: false
