@@ -15,6 +15,7 @@ filegroup(
     srcs = [
         ":cc-compiler-armeabi-v7a",
         ":cc-compiler-k8",
+        ":cc-compiler-cortex-m3",
         ":arm_none_all_files",
         "@com_arm_developer_toolchain_gcc_5_4//:compiler_components",
     ],
