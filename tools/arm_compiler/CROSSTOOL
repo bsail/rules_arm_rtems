@@ -155,6 +155,8 @@ toolchain {
   cxx_flag: "external/com_arm_developer_toolchain_gcc_5_4/arm-none-eabi/include/5.4.1"
   cxx_flag: "-I"
   cxx_flag: "external/com_arm_developer_toolchain_gcc_5_4/arm-none-eabi/libc/usr/include"
+  cxx_flag: "-I"
+  cxx_flag: "external/com_arm_developer_toolchain_gcc_5_4/arm-none-eabi/lib/gcc/arm-none-eabi/include"
   cxx_flag: "-std=c++11"
 
   cxx_builtin_include_directory: "%package(@com_arm_developer_toolchain_gcc_5_4//include)%"
