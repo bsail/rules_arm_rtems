@@ -59,10 +59,10 @@ toolchain {
   tool_path { name: "objdump" path: "arm_none_gcc/arm-none-eabi-objdump" }
   tool_path { name: "strip" path: "arm_none_gcc/arm-none-eabi-strip" }
 
-  compiler_flag: "-mcpu=cortex-m2"
+  compiler_flag: "-mcpu=cortex-m3"
   compiler_flag: "-mthumb" 
-  compiler_flag: "-mfloat-abi=hard"
-  compiler_flag: "-mfpu=fpv4-sp-d16"
+  # compiler_flag: "-mfloat-abi=hard"
+  # compiler_flag: "-mfpu=fpv4-sp-d16"
   compiler_flag: "-fdata-sections"
   compiler_flag: "-ffunction-sections"
 
@@ -78,7 +78,7 @@ toolchain {
   cxx_builtin_include_directory: "%package(@com_arm_developer_toolchain_gcc_5_4//arm-none-eabi/include)%"
   cxx_builtin_include_directory: "%package(@com_arm_developer_toolchain_gcc_5_4//lib/gcc/arm-none-eabi/5.4.1/include)%"
 
-  linker_flag: "-mcpu=cortex-m4"
+  linker_flag: "-mcpu=cortex-m3"
   linker_flag: "-mthumb"
   # linker_flag: "-mfloat-abi=hard" 
   # linker_flag: "-mfpu=fpv4-sp-d16"
