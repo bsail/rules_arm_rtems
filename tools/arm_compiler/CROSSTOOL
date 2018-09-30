@@ -103,7 +103,7 @@ default_toolchain {
 
 toolchain {
   abi_version: "gcc"
-  abi_libc_version: "gcc"
+  abi_libc_version: "cortex-m3-none"
   builtin_sysroot: ""
   compiler: "gcc"
   host_system_name: "cortex-m3"
