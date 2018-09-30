@@ -33,6 +33,7 @@ cc_toolchain_suite(
     # target_cpu | compiler
     toolchains = {
         "armeabi-v7a|gcc": "cc-compiler-armeabi-v7a",
+        "cortex-m3|gcc": "cc-compiler-cortex-m3",
         "k8|compiler": "cc-compiler-k8",
     },
 )
@@ -76,6 +77,21 @@ cc_toolchain(
     all_files = ":arm_none_all_files",
     compiler_files = ":arm_none_compiler_files",
     cpu = "armeabi-v7a",
+    dwp_files = ":empty",
+    dynamic_runtime_libs = [":empty"],
+    linker_files = ":arm_none_linker_files",
+    objcopy_files = "//tools/arm_compiler/arm_none_gcc:objcopy",
+    static_runtime_libs = [":empty"],
+    strip_files = "//tools/arm_compiler/arm_none_gcc:strip",
+    supports_param_files = 1,
+    visibility = ["//visibility:public"],
+)
+
+cc_toolchain(
+    name = "cc-compiler-cortex-m3",
+    all_files = ":arm_none_all_files",
+    compiler_files = ":arm_none_compiler_files",
+    cpu = "cortex-m3",
     dwp_files = ":empty",
     dynamic_runtime_libs = [":empty"],
     linker_files = ":arm_none_linker_files",
