@@ -22,83 +22,6 @@ default_toolchain {
   toolchain_identifier: "cortex-m3-none"
 }
 
-# Version for Cortex-M3 with local compiler
-
-# toolchain {
-#   abi_version: "gcc"
-#   abi_libc_version: "gcc"
-#   builtin_sysroot: ""
-#   compiler: "gcc"
-#   host_system_name: "cortex-m3"
-#   needsPic: true
-#   supports_gold_linker: false
-#   supports_incremental_linker: false
-#   supports_fission: false
-#   supports_interface_shared_objects: false
-#   supports_normalizing_ar: false
-#   supports_start_end_lib: false
-#   supports_thin_archives: false
-#   target_libc: "cortex-m3-none"
-#   target_cpu: "cortex-m3"
-#   target_system_name: "cortex-m3-none-system"
-#   toolchain_identifier: "cortex-m3-none"
-
-#   tool_path { name: "ar" path: "/usr/bin/arm-none-eabi-ar" }
-#   tool_path { name: "compat-ld" path: "/usr/bin/arm-none-eabi-ld" }
-#   tool_path { name: "cpp" path: "/usr/bin/arm-none-eabi-cpp" }
-#   tool_path { name: "gcc" path: "/usr/bin/arm-none-eabi-gcc" }
-#   compiler_flag: "-mcpu=cortex-m3"
-#   compiler_flag: "-mthumb"
-#   cxx_flag: "-std=c++14"
-#   # linker_flag: "-lstdc++"
-
-#   # Utilize "nano" libc and libstdc++. These are included in the Debian
-#   # libstdc++-arm-none-eabi package. They are built with no exceptions and
-#   # short wchar to reduce code and data size.
-#   compiler_flag: "-specs=/usr/lib/arm-none-eabi/lib/nosys.specs"
-#   compiler_flag: "-fno-exceptions"
-#   compiler_flag: "-fshort-wchar"
-#   linker_flag: "-specs=/usr/lib/arm-none-eabi/lib/nosys.specs"
-#   # crtbegin.o is unfortunately not built with -fshort-wchar, so the linker
-#   # complains, but we know it doesn't actually use wchar_t.
-#   linker_flag: "-Wl,--no-wchar-size-warning"
-
-#   # TODO(bazel-team): In theory, the path here ought to exactly match the path
-#   # used by gcc. That works because bazel currently doesn't track files at
-#   # absolute locations and has no remote execution, yet. However, this will need
-#   # to be fixed, maybe with auto-detection?
-#   cxx_builtin_include_directory: "/usr/lib/gcc/"
-#   cxx_builtin_include_directory: "/usr/include"
-#   # cxx_builtin_include_directory: "/usr/include"
-#   tool_path { name: "gcov" path: "/usr/bin/arm-none-eabi-gcov" }
-
-#   # C(++) compiles invoke the compiler (as that is the one knowing where
-#   # to find libraries), but we provide LD so other rules can invoke the linker.
-#   tool_path { name: "ld" path: "/usr/bin/arm-none-eabi-ld" }
-
-#   tool_path { name: "nm" path: "/usr/bin/arm-none-eabi-nm" }
-#   tool_path { name: "objcopy" path: "/usr/bin/arm-none-eabi-objcopy" }
-#   objcopy_embed_flag: "-I"
-#   objcopy_embed_flag: "binary"
-#   tool_path { name: "objdump" path: "/usr/bin/arm-none-eabi-objdump" }
-#   tool_path { name: "strip" path: "/usr/bin/arm-none-eabi-strip" }
-
-#   # Always enable debug symbols, since only raw binaries will be deployed
-#   # anyways.
-#   compiler_flag: "-g3"
-
-#   compilation_mode_flags {
-#     mode: OPT
-#     # Optimize for size.
-#     compiler_flag: "-Os"
-
-#     # Removal of unused code and data at link time.
-#     compiler_flag: "-ffunction-sections"
-#     compiler_flag: "-fdata-sections"
-#     linker_flag: "-Wl,--gc-sections"
-#   }
-# }
-
 # Version for Cortex-M3 with compiler from upstream
 
 toolchain {
@@ -120,21 +43,21 @@ toolchain {
   target_system_name: "cortex-m3-none-system"
   toolchain_identifier: "cortex-m3-none"
 
-  tool_path { name: "ar" path: "arm_none_gcc/arm-none-eabi-ar" }
-  tool_path { name: "compat-ld" path: "arm_none_gcc/arm-none-eabi-ld" }
-  tool_path { name: "cpp" path: "arm_none_gcc/arm-none-eabi-gcc" }
-  tool_path { name: "dwp" path: "arm_none_gcc/arm-none-eabi-dwp" }
-  tool_path { name: "gcc" path: "arm_none_gcc/arm-none-eabi-gcc" }
-  tool_path { name: "gcov" path: "arm-frc-none-eabi/arm-frc-none-eabi-gcov-4.9" }
+  tool_path { name: "ar" path: "arm_rtems5_gcc/arm-rtems5-ar" }
+  tool_path { name: "compat-ld" path: "arm_rtems5_gcc/arm-rtems5-ld" }
+  tool_path { name: "cpp" path: "arm_rtems5_gcc/arm-rtems5-gcc" }
+  tool_path { name: "dwp" path: "arm_rtems5_gcc/arm-rtems5-dwp" }
+  tool_path { name: "gcc" path: "arm_rtems5_gcc/arm-rtems5-gcc" }
+  tool_path { name: "gcov" path: "arm-frc-rtems5/arm-frc-rtems5-gcov-4.9" }
   # C(++) compiles invoke the compiler (as that is the one knowing where
   # to find libraries), but we provide LD so other rules can invoke the linker.
-  tool_path { name: "ld" path: "arm_none_gcc/arm-none-eabi-ld" }
-  tool_path { name: "nm" path: "arm_none_gcc/arm-none-eabi-nm" }
-  tool_path { name: "objcopy" path: "arm_none_gcc/arm-none-eabi-objcopy" }
+  tool_path { name: "ld" path: "arm_rtems5_gcc/arm-rtems5-ld" }
+  tool_path { name: "nm" path: "arm_rtems5_gcc/arm-rtems5-nm" }
+  tool_path { name: "objcopy" path: "arm_rtems5_gcc/arm-rtems5-objcopy" }
   objcopy_embed_flag: "-I"
   objcopy_embed_flag: "binary"
-  tool_path { name: "objdump" path: "arm_none_gcc/arm-none-eabi-objdump" }
-  tool_path { name: "strip" path: "arm_none_gcc/arm-none-eabi-strip" }
+  tool_path { name: "objdump" path: "arm_rtems5_gcc/arm-rtems5-objdump" }
+  tool_path { name: "strip" path: "arm_rtems5_gcc/arm-rtems5-strip" }
 
   compiler_flag: "-mcpu=cortex-m3"
   compiler_flag: "-march=armv7-m"
@@ -145,16 +68,16 @@ toolchain {
   compiler_flag: "-ffunction-sections"
 
   cxx_flag: "-I"
-  cxx_flag: "external/com_arm_developer_toolchain_gcc_5_4/arm-none-eabi/include/c++/5.4.1/arm-none-eabi"
+  cxx_flag: "external/com_arm_developer_toolchain_gcc_rtems/lib/gcc/arm-rtems5/7.3.0/include/c++/arm-rtems5"
   cxx_flag: "-I"
-  cxx_flag: "external/com_arm_developer_toolchain_gcc_5_4/arm-none-eabi/include/c++/5.4.1"
-  cxx_flag: "-I"
-  cxx_flag: "external/com_arm_developer_toolchain_gcc_5_4/arm-none-eabi/libc/usr/include"
+  cxx_flag: "external/com_arm_developer_toolchain_gcc_rtems/lib/gcc/arm-rtems5/7.3.0/include/c++"
+  # cxx_flag: "-I"
+  # cxx_flag: "external/com_arm_developer_toolchain_gcc_rtems/arm-rtems5/libc/usr/include"
   cxx_flag: "-std=c++14"
 
-  cxx_builtin_include_directory: "%package(@com_arm_developer_toolchain_gcc_5_4//include)%"
-  cxx_builtin_include_directory: "%package(@com_arm_developer_toolchain_gcc_5_4//arm-none-eabi/include)%"
-  cxx_builtin_include_directory: "%package(@com_arm_developer_toolchain_gcc_5_4//lib/gcc/arm-none-eabi/5.4.1/include)%"
+  cxx_builtin_include_directory: "%package(@com_arm_developer_toolchain_gcc_rtems//include)%"
+  cxx_builtin_include_directory: "%package(@com_arm_developer_toolchain_gcc_rtems//arm-rtems5/include)%"
+  cxx_builtin_include_directory: "%package(@com_arm_developer_toolchain_gcc_rtems//lib/gcc/arm-rtems5/7.3.0/include)%"
 
   linker_flag: "-mcpu=cortex-m3"
   linker_flag: "-march=armv7-m"
@@ -162,11 +85,10 @@ toolchain {
   linker_flag: "-specs=nosys.specs"
   # linker_flag: "-lstdc++"
 
-  linker_flag: "-Lexternal/com_arm_developer_toolchain_gcc_5_4/arm-none-eabi/lib/hard/"
-  linker_flag: "-Lexternal/com_arm_developer_toolchain_gcc_5_4/arm-none-eabi/lib/thumb/"
-  linker_flag: "-Lexternal/com_arm_developer_toolchain_gcc_5_4/arm-none-eabi/lib/"
-  linker_flag: "-Lexternal/com_arm_developer_toolchain_gcc_5_4/lib/gcc/arm-none-eabi/5.4.1/"
-  linker_flag: "-Bexternal/com_arm_developer_toolchain_gcc_5_4/arm-none-eabi/bin"
+  linker_flag: "-Lexternal/com_arm_developer_toolchain_gcc_rtems/arm-rtems5/lib/thumb/"
+  linker_flag: "-Lexternal/com_arm_developer_toolchain_gcc_rtems/arm-rtems5/lib/"
+  linker_flag: "-Lexternal/com_arm_developer_toolchain_gcc_rtems/lib/gcc/arm-rtems5/7.3.0/"
+  linker_flag: "-Bexternal/com_arm_developer_toolchain_gcc_rtems/arm-rtems5/bin"
 
   # Anticipated future default.
   # This makes GCC and Clang do what we want when called through symlinks.
@@ -259,21 +181,21 @@ toolchain {
   target_system_name: "arm_a15"
   toolchain_identifier: "clang_linux_arm"
 
-  tool_path { name: "ar" path: "arm_none_gcc/arm-none-eabi-ar" }
-  tool_path { name: "compat-ld" path: "arm_none_gcc/arm-none-eabi-ld" }
-  tool_path { name: "cpp" path: "arm_none_gcc/arm-none-eabi-gcc" }
-  tool_path { name: "dwp" path: "arm_none_gcc/arm-none-eabi-dwp" }
-  tool_path { name: "gcc" path: "arm_none_gcc/arm-none-eabi-gcc" }
-  tool_path { name: "gcov" path: "arm-frc-none-eabi/arm-frc-none-eabi-gcov-4.9" }
+  tool_path { name: "ar" path: "arm_rtems5_gcc/arm-rtems5-ar" }
+  tool_path { name: "compat-ld" path: "arm_rtems5_gcc/arm-rtems5-ld" }
+  tool_path { name: "cpp" path: "arm_rtems5_gcc/arm-rtems5-gcc" }
+  tool_path { name: "dwp" path: "arm_rtems5_gcc/arm-rtems5-dwp" }
+  tool_path { name: "gcc" path: "arm_rtems5_gcc/arm-rtems5-gcc" }
+  tool_path { name: "gcov" path: "arm-frc-rtems5/arm-frc-rtems5-gcov-4.9" }
   # C(++) compiles invoke the compiler (as that is the one knowing where
   # to find libraries), but we provide LD so other rules can invoke the linker.
-  tool_path { name: "ld" path: "arm_none_gcc/arm-none-eabi-ld" }
-  tool_path { name: "nm" path: "arm_none_gcc/arm-none-eabi-nm" }
-  tool_path { name: "objcopy" path: "arm_none_gcc/arm-none-eabi-objcopy" }
+  tool_path { name: "ld" path: "arm_rtems5_gcc/arm-rtems5-ld" }
+  tool_path { name: "nm" path: "arm_rtems5_gcc/arm-rtems5-nm" }
+  tool_path { name: "objcopy" path: "arm_rtems5_gcc/arm-rtems5-objcopy" }
   objcopy_embed_flag: "-I"
   objcopy_embed_flag: "binary"
-  tool_path { name: "objdump" path: "arm_none_gcc/arm-none-eabi-objdump" }
-  tool_path { name: "strip" path: "arm_none_gcc/arm-none-eabi-strip" }
+  tool_path { name: "objdump" path: "arm_rtems5_gcc/arm-rtems5-objdump" }
+  tool_path { name: "strip" path: "arm_rtems5_gcc/arm-rtems5-strip" }
 
   compiler_flag: "-mcpu=cortex-m4"
   compiler_flag: "-mthumb" 
@@ -283,16 +205,16 @@ toolchain {
   compiler_flag: "-ffunction-sections"
 
   cxx_flag: "-I"
-  cxx_flag: "external/com_arm_developer_toolchain_gcc_5_4/arm-none-eabi/include/c++/5.4.1/arm-none-eabi"
+  cxx_flag: "external/com_arm_developer_toolchain_gcc_rtems/arm-rtems5/include/c++/5.4.1/arm-rtems5"
   cxx_flag: "-I"
-  cxx_flag: "external/com_arm_developer_toolchain_gcc_5_4/arm-none-eabi/include/c++/5.4.1"
+  cxx_flag: "external/com_arm_developer_toolchain_gcc_rtems/arm-rtems5/include/c++/5.4.1"
   cxx_flag: "-I"
-  cxx_flag: "external/com_arm_developer_toolchain_gcc_5_4/arm-none-eabi/libc/usr/include"
+  cxx_flag: "external/com_arm_developer_toolchain_gcc_rtems/arm-rtems5/libc/usr/include"
   cxx_flag: "-std=c++11"
 
-  cxx_builtin_include_directory: "%package(@com_arm_developer_toolchain_gcc_5_4//include)%"
-  cxx_builtin_include_directory: "%package(@com_arm_developer_toolchain_gcc_5_4//arm-none-eabi/include)%"
-  cxx_builtin_include_directory: "%package(@com_arm_developer_toolchain_gcc_5_4//lib/gcc/arm-none-eabi/5.4.1/include)%"
+  cxx_builtin_include_directory: "%package(@com_arm_developer_toolchain_gcc_rtems//include)%"
+  cxx_builtin_include_directory: "%package(@com_arm_developer_toolchain_gcc_rtems//arm-rtems5/include)%"
+  cxx_builtin_include_directory: "%package(@com_arm_developer_toolchain_gcc_rtems//lib/gcc/arm-rtems5/5.4.1/include)%"
 
   linker_flag: "-mcpu=cortex-m4"
   linker_flag: "-mthumb"
@@ -301,11 +223,11 @@ toolchain {
   linker_flag: "-specs=nano.specs"
   #linker_flag: "-specs=nosys.specs"
 
-  #linker_flag: "-Lexternal/com_arm_developer_toolchain_gcc_5_4/arm-none-eabi/lib/hard/"
-  #linker_flag: "-Lexternal/com_arm_developer_toolchain_gcc_5_4/arm-none-eabi/lib/thumb/"
-  #linker_flag: "-Lexternal/com_arm_developer_toolchain_gcc_5_4/arm-none-eabi/lib/"
-  #linker_flag: "-Lexternal/com_arm_developer_toolchain_gcc_5_4/lib/gcc/arm-none-eabi/5.4.1/"
-  #linker_flag: "-Bexternal/com_arm_developer_toolchain_gcc_5_4/arm-none-eabi/bin"
+  #linker_flag: "-Lexternal/com_arm_developer_toolchain_gcc_rtems/arm-rtems5/lib/hard/"
+  #linker_flag: "-Lexternal/com_arm_developer_toolchain_gcc_rtems/arm-rtems5/lib/thumb/"
+  #linker_flag: "-Lexternal/com_arm_developer_toolchain_gcc_rtems/arm-rtems5/lib/"
+  #linker_flag: "-Lexternal/com_arm_developer_toolchain_gcc_rtems/lib/gcc/arm-rtems5/5.4.1/"
+  #linker_flag: "-Bexternal/com_arm_developer_toolchain_gcc_rtems/arm-rtems5/bin"
 
   # Anticipated future default.
   # This makes GCC and Clang do what we want when called through symlinks.

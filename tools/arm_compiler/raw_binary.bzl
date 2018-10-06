@@ -16,12 +16,12 @@ def _bin_impl(ctx):
             output.path
         ])
 
-raw_binary = rule(
+raw_binary_rtems = rule(
     implementation=_bin_impl,
     fragments=["cpp"],
     attrs={
         "src": attr.label(mandatory=True, allow_files=True, single_file=True),
-        "_objcopy": attr.label(default=Label("//tools/arm_compiler/arm_none_gcc:objcopy"), allow_files=True)
+        "_objcopy": attr.label(default=Label("//tools/arm_compiler/arm_rtems5_gcc:objcopy"), allow_files=True)
     },
     outputs={"out": "%{name}.bin"},
 )
@@ -43,12 +43,12 @@ def _hex_impl(ctx):
             output.path
         ])
 
-hex_binary = rule(
+hex_binary_rtems = rule(
     implementation=_hex_impl,
     fragments=["cpp"],
     attrs={
         "src": attr.label(mandatory=True, allow_files=True, single_file=True),
-        "_objcopy": attr.label(default=Label("//tools/arm_compiler/arm_none_gcc:objcopy"), allow_files=True)
+        "_objcopy": attr.label(default=Label("//tools/arm_compiler/arm_rtems5_gcc:objcopy"), allow_files=True)
     },
     outputs={"out": "%{name}.hex"},
 )

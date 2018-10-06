@@ -3,65 +3,65 @@ package(default_visibility = ['//visibility:public'])
 filegroup(
   name = 'gcc',
   srcs = [
-    'bin/arm-none-eabi-gcc',
+    'bin/arm-rtems5-gcc',
   ],
 )
 
 filegroup(
   name = 'ar',
   srcs = [
-    'bin/arm-none-eabi-ar',
+    'bin/arm-rtems5-ar',
   ],
 )
 
 filegroup(
   name = 'ld',
   srcs = [
-    'bin/arm-none-eabi-ld',
+    'bin/arm-rtems5-ld',
   ],
 )
 
 filegroup(
   name = 'nm',
   srcs = [
-    'bin/arm-none-eabi-nm',
+    'bin/arm-rtems5-nm',
   ],
 )
 
 filegroup(
   name = 'objcopy',
   srcs = [
-    'bin/arm-none-eabi-objcopy',
+    'bin/arm-rtems5-objcopy',
   ],
 )
 
 filegroup(
   name = 'objdump',
   srcs = [
-    'bin/arm-none-eabi-objdump',
+    'bin/arm-rtems5-objdump',
   ],
 )
 
 filegroup(
   name = 'strip',
   srcs = [
-    'bin/arm-none-eabi-strip',
+    'bin/arm-rtems5-strip',
   ],
 )
 
 filegroup(
   name = 'as',
   srcs = [
-    'bin/arm-none-eabi-as',
+    'bin/arm-rtems5-as',
   ],
 )
 
 filegroup(
   name = 'compiler_pieces',
   srcs = glob([
-    'arm-none-eabi/**',
-    'libexec/**',
-    'lib/gcc/arm-none-eabi/**',
+    'arm-rtems5/**',
+    # 'libexec/**',
+    'lib/gcc/arm-rtems5/**',
     'include/**',
   ]),
 )

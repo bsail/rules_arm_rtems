@@ -1,0 +1,5 @@
+#!/bin/bash --norc
+
+exec -a arm-rtems5-objcopy \
+    external/com_arm_developer_toolchain_gcc_rtems/bin/arm-rtems5-objcopy \
+    "$@"

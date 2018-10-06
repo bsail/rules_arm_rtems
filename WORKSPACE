@@ -1,7 +1,7 @@
 workspace(
-    name = "arm_embedded"
+    name = "arm_rtems"
 )
 
-load("//arm_tools:rules.bzl", "arm_none_repository")
+load("//arm_tools:rules.bzl", "arm_rtems_repository")
 
-arm_none_repository()
+arm_rtems_repository()

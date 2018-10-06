@@ -17,14 +17,14 @@ filegroup(
         ":cc-compiler-k8",
         ":cc-compiler-cortex-m3",
         ":arm_none_all_files",
-        "@com_arm_developer_toolchain_gcc_5_4//:compiler_components",
+        "@com_arm_developer_toolchain_gcc_rtems//:compiler_components",
     ],
 )
 
 filegroup(
     name = "srcs",
     srcs = glob(["**"]) + [
-        "//tools/arm_compiler/arm_none_gcc:srcs",
+        "//tools/arm_compiler/arm_rtems5_gcc:srcs",
     ],
     visibility = ["//tools/arm_compiler:__pkg__"],
 )
@@ -42,29 +42,29 @@ cc_toolchain_suite(
 filegroup(
     name = "arm_none_all_files",
     srcs = [
-        "//tools/arm_compiler/arm_none_gcc:tool-wrappers",
-        "@com_arm_developer_toolchain_gcc_5_4//:compiler_pieces",
+        "//tools/arm_compiler/arm_rtems5_gcc:tool-wrappers",
+        "@com_arm_developer_toolchain_gcc_rtems//:compiler_pieces",
     ],
 )
 
 filegroup(
     name = "arm_none_linker_files",
     srcs = [
-        "//tools/arm_compiler/arm_none_gcc:ar",
-        "//tools/arm_compiler/arm_none_gcc:gcc",
-        "//tools/arm_compiler/arm_none_gcc:ld",
-        "//tools/arm_compiler/arm_none_gcc:objcopy", 
-        "@com_arm_developer_toolchain_gcc_5_4//:compiler_pieces",
+        "//tools/arm_compiler/arm_rtems5_gcc:ar",
+        "//tools/arm_compiler/arm_rtems5_gcc:gcc",
+        "//tools/arm_compiler/arm_rtems5_gcc:ld",
+        "//tools/arm_compiler/arm_rtems5_gcc:objcopy", 
+        "@com_arm_developer_toolchain_gcc_rtems//:compiler_pieces",
     ],
 )
 
 filegroup(
     name = "arm_none_compiler_files",
     srcs = [
-        "//tools/arm_compiler/arm_none_gcc:as",
-        "//tools/arm_compiler/arm_none_gcc:gcc",
-        "//tools/arm_compiler/arm_none_gcc:ld",
-        "//tools/arm_compiler/arm_none_gcc:objcopy", 
+        "//tools/arm_compiler/arm_rtems5_gcc:as",
+        "//tools/arm_compiler/arm_rtems5_gcc:gcc",
+        "//tools/arm_compiler/arm_rtems5_gcc:ld",
+        "//tools/arm_compiler/arm_rtems5_gcc:objcopy", 
     ],
 )
 
@@ -81,9 +81,9 @@ cc_toolchain(
     dwp_files = ":empty",
     dynamic_runtime_libs = [":empty"],
     linker_files = ":arm_none_linker_files",
-    objcopy_files = "//tools/arm_compiler/arm_none_gcc:objcopy",
+    objcopy_files = "//tools/arm_compiler/arm_rtems5_gcc:objcopy",
     static_runtime_libs = [":empty"],
-    strip_files = "//tools/arm_compiler/arm_none_gcc:strip",
+    strip_files = "//tools/arm_compiler/arm_rtems5_gcc:strip",
     supports_param_files = 1,
     visibility = ["//visibility:public"],
 )
@@ -96,9 +96,9 @@ cc_toolchain(
     dwp_files = ":empty",
     dynamic_runtime_libs = [":empty"],
     linker_files = ":arm_none_linker_files",
-    objcopy_files = "//tools/arm_compiler/arm_none_gcc:objcopy",
+    objcopy_files = "//tools/arm_compiler/arm_rtems5_gcc:objcopy",
     static_runtime_libs = [":empty"],
-    strip_files = "//tools/arm_compiler/arm_none_gcc:strip",
+    strip_files = "//tools/arm_compiler/arm_rtems5_gcc:strip",
     supports_param_files = 1,
     visibility = ["//visibility:public"],
 )

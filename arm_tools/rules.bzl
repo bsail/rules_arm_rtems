@@ -1,16 +1,9 @@
-def arm_none_repository(arch="linux"):
+def arm_rtems_repository(arch="linux"):
     if arch == "linux":
         native.new_http_archive(
-            name = "com_arm_developer_toolchain_gcc_5_4",
-            build_file = str(Label("//compilers:arm_none_gcc_5.4.BUILD")),
-            strip_prefix = "gcc-arm-none-eabi-5_4-2016q3",
-            url = "https://developer.arm.com/-/media/Files/downloads/gnu-rm/5_4-2016q3/gcc-arm-none-eabi-5_4-2016q3-20160926-linux.tar.bz2"
+            name = "com_arm_developer_toolchain_gcc_rtems",
+            build_file = str(Label("//compilers:arm_rtems5_gcc.BUILD")),
+            strip_prefix = "arm-rtems5-gcc-strip",
+            url = "https://bsail.ru/download/arm-rtems5-gcc-strip.zip",
+            sha256 = "d6c29bb191158a7d3a3c4c9e441dcddecdf97c50fb8aa3770a0376d2984f0892",
         )
-    if arch == "mac":
-        native.new_http_archive(
-            name = "com_arm_developer_toolchain_gcc_5_4",
-            build_file = str(Label("//compilers:arm_none_gcc_5.4.BUILD")),
-            strip_prefix = "gcc-arm-none-eabi-5_4-2016q3",
-            url = "https://developer.arm.com/-/media/Files/downloads/gnu-rm/5_4-2016q3/gcc-arm-none-eabi-5_4-2016q3-20160926-mac.tar.bz2"
-        )
-
