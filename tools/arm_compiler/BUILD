@@ -22,7 +22,7 @@ filegroup(
 filegroup(
     name = "srcs",
     srcs = glob(["**"]) + [
-        "//tools/arm_compiler/arm_rtems5_gcc:srcs",
+        "//tools/arm_compiler/arm_rtems4.11_gcc:srcs",
     ],
     visibility = ["//tools/arm_compiler:__pkg__"],
 )
@@ -38,7 +38,7 @@ cc_toolchain_suite(
 filegroup(
     name = "arm_none_all_files",
     srcs = [
-        "//tools/arm_compiler/arm_rtems5_gcc:tool-wrappers",
+        "//tools/arm_compiler/arm_rtems4.11_gcc:tool-wrappers",
         "@com_arm_developer_toolchain_gcc_rtems//:compiler_pieces",
     ],
 )
@@ -46,10 +46,10 @@ filegroup(
 filegroup(
     name = "arm_none_linker_files",
     srcs = [
-        "//tools/arm_compiler/arm_rtems5_gcc:ar",
-        "//tools/arm_compiler/arm_rtems5_gcc:gcc",
-        "//tools/arm_compiler/arm_rtems5_gcc:ld",
-        "//tools/arm_compiler/arm_rtems5_gcc:objcopy", 
+        "//tools/arm_compiler/arm_rtems4.11_gcc:ar",
+        "//tools/arm_compiler/arm_rtems4.11_gcc:gcc",
+        "//tools/arm_compiler/arm_rtems4.11_gcc:ld",
+        "//tools/arm_compiler/arm_rtems4.11_gcc:objcopy", 
         "@com_arm_developer_toolchain_gcc_rtems//:compiler_pieces",
     ],
 )
@@ -57,10 +57,10 @@ filegroup(
 filegroup(
     name = "arm_none_compiler_files",
     srcs = [
-        "//tools/arm_compiler/arm_rtems5_gcc:as",
-        "//tools/arm_compiler/arm_rtems5_gcc:gcc",
-        "//tools/arm_compiler/arm_rtems5_gcc:ld",
-        "//tools/arm_compiler/arm_rtems5_gcc:objcopy", 
+        "//tools/arm_compiler/arm_rtems4.11_gcc:as",
+        "//tools/arm_compiler/arm_rtems4.11_gcc:gcc",
+        "//tools/arm_compiler/arm_rtems4.11_gcc:ld",
+        "//tools/arm_compiler/arm_rtems4.11_gcc:objcopy", 
     ],
 )
 
@@ -77,9 +77,9 @@ cc_toolchain(
     dwp_files = ":empty",
     dynamic_runtime_libs = [":empty"],
     linker_files = ":arm_none_linker_files",
-    objcopy_files = "//tools/arm_compiler/arm_rtems5_gcc:objcopy",
+    objcopy_files = "//tools/arm_compiler/arm_rtems4.11_gcc:objcopy",
     static_runtime_libs = [":empty"],
-    strip_files = "//tools/arm_compiler/arm_rtems5_gcc:strip",
+    strip_files = "//tools/arm_compiler/arm_rtems4.11_gcc:strip",
     supports_param_files = 1,
     visibility = ["//visibility:public"],
 )

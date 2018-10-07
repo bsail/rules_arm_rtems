@@ -9,7 +9,7 @@ filegroup(
 filegroup(
     name = "gcc",
     srcs = [
-        "arm-rtems5-gcc",
+        "arm-rtems4.11-gcc",
         "@com_arm_developer_toolchain_gcc_rtems//:gcc",
     ],
 )
@@ -17,7 +17,7 @@ filegroup(
 filegroup(
     name = "ar",
     srcs = [
-        "arm-rtems5-ar",
+        "arm-rtems4.11-ar",
         "@com_arm_developer_toolchain_gcc_rtems//:ar",
     ],
 )
@@ -25,7 +25,7 @@ filegroup(
 filegroup(
     name = "ld",
     srcs = [
-        "arm-rtems5-ld",
+        "arm-rtems4.11-ld",
         "@com_arm_developer_toolchain_gcc_rtems//:ld",
     ],
 )
@@ -33,7 +33,7 @@ filegroup(
 filegroup(
     name = "nm",
     srcs = [
-        "arm-rtems5-nm",
+        "arm-rtems4.11-nm",
         "@com_arm_developer_toolchain_gcc_rtems//:nm",
     ],
 )
@@ -41,7 +41,7 @@ filegroup(
 filegroup(
     name = "objcopy",
     srcs = [
-        "arm-rtems5-objcopy",
+        "arm-rtems4.11-objcopy",
         "@com_arm_developer_toolchain_gcc_rtems//:objcopy",
     ],
     visibility = ["//visibility:public"],
@@ -50,7 +50,7 @@ filegroup(
 filegroup(
     name = "objdump",
     srcs = [
-        "arm-rtems5-objdump",
+        "arm-rtems4.11-objdump",
         "@com_arm_developer_toolchain_gcc_rtems//:objdump",
     ],
 )
@@ -58,7 +58,7 @@ filegroup(
 filegroup(
     name = "strip",
     srcs = [
-        "arm-rtems5-strip",
+        "arm-rtems4.11-strip",
         "@com_arm_developer_toolchain_gcc_rtems//:strip",
     ],
 )
@@ -66,7 +66,7 @@ filegroup(
 filegroup(
     name = "as",
     srcs = [
-        "arm-rtems5-as",
+        "arm-rtems4.11-as",
         "@com_arm_developer_toolchain_gcc_rtems//:as",
     ],
 )

@@ -21,7 +21,7 @@ raw_binary_rtems = rule(
     fragments=["cpp"],
     attrs={
         "src": attr.label(mandatory=True, allow_files=True, single_file=True),
-        "_objcopy": attr.label(default=Label("//tools/arm_compiler/arm_rtems5_gcc:objcopy"), allow_files=True)
+        "_objcopy": attr.label(default=Label("//tools/arm_compiler/arm_rtems4.11_gcc:objcopy"), allow_files=True)
     },
     outputs={"out": "%{name}.bin"},
 )
@@ -48,7 +48,7 @@ hex_binary_rtems = rule(
     fragments=["cpp"],
     attrs={
         "src": attr.label(mandatory=True, allow_files=True, single_file=True),
-        "_objcopy": attr.label(default=Label("//tools/arm_compiler/arm_rtems5_gcc:objcopy"), allow_files=True)
+        "_objcopy": attr.label(default=Label("//tools/arm_compiler/arm_rtems4.11_gcc:objcopy"), allow_files=True)
     },
     outputs={"out": "%{name}.hex"},
 )
