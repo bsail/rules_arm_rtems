@@ -51,18 +51,37 @@ toolchain {
   # compiler_flag: "-fshort-wchar"
   compiler_flag: "-fdata-sections"
   compiler_flag: "-ffunction-sections"
+  compiler_flag: "-std=c11"
 
   # cxx_flag: "-I"
-  # cxx_flag: "external/com_arm_developer_toolchain_gcc_rtems/arm-rtems4.11/include/c++/7.3.0/arm-rtems4.11"
+  # cxx_flag: "external/com_arm_developer_toolchain_gcc_rtems/arm-rtems4.11/include/c++/4.9.3/arm-rtems4.11"
   # cxx_flag: "-I"
-  # cxx_flag: "external/com_arm_developer_toolchain_gcc_rtems/arm-rtems4.11/include/c++/7.3.0"
+  # cxx_flag: "external/com_arm_developer_toolchain_gcc_rtems/arm-rtems4.11/include/c++/4.9.3"
   cxx_flag: "-I"
   cxx_flag: "external/com_arm_developer_toolchain_gcc_rtems/arm-rtems4.11/include"
   cxx_flag: "-std=c++14"
 
+  compiler_flag: "-I"
+  compiler_flag: "external/com_arm_developer_toolchain_gcc_rtems/lib"
+
+  compiler_flag: "-I"
+  compiler_flag: "external/com_arm_developer_toolchain_gcc_rtems/lib/gcc/arm-rtems4.11/4.9.3/include"
+
+  compiler_flag: "-MMD"
+
+
+  compiler_flag: "-I"
+  compiler_flag: "external/com_arm_developer_toolchain_gcc_rtems/arm-rtems4.11/include"
+
+  # cxx_flag: "-isystem"
+  # cxx_flag: "external/com_arm_developer_toolchain_gcc_rtems/arm-rtems4.11/include"
+
+
+
+
   cxx_builtin_include_directory: "%package(@com_arm_developer_toolchain_gcc_rtems//include)%"
   cxx_builtin_include_directory: "%package(@com_arm_developer_toolchain_gcc_rtems//arm-rtems4.11/include)%"
-  cxx_builtin_include_directory: "%package(@com_arm_developer_toolchain_gcc_rtems//lib/gcc/arm-rtems4.11/7.3.0/include)%"
+  cxx_builtin_include_directory: "%package(@com_arm_developer_toolchain_gcc_rtems//lib/gcc/arm-rtems4.11/4.9.3/include)%"
 
   linker_flag: "-mcpu=cortex-m3"
   linker_flag: "-march=armv7-m"
@@ -72,7 +91,7 @@ toolchain {
 
   linker_flag: "-Lexternal/com_arm_developer_toolchain_gcc_rtems/arm-rtems4.11/lib/thumb/"
   linker_flag: "-Lexternal/com_arm_developer_toolchain_gcc_rtems/arm-rtems4.11/lib/"
-  linker_flag: "-Lexternal/com_arm_developer_toolchain_gcc_rtems/lib/gcc/arm-rtems4.11/7.3.0/"
+  linker_flag: "-Lexternal/com_arm_developer_toolchain_gcc_rtems/lib/gcc/arm-rtems4.11/4.9.3/"
   linker_flag: "-Bexternal/com_arm_developer_toolchain_gcc_rtems/arm-rtems4.11/bin"
 
   # Anticipated future default.

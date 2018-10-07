@@ -1,6 +1,6 @@
 #!/bin/bash --norc
 
-PATH="external/com_arm_developer_toolchain_gcc_rtems/lib/gcc/arm-rtems4.11/5.4.1:$PATH" \
+PATH="external/com_arm_developer_toolchain_gcc_rtems/lib/gcc/arm-rtems4.11/4.9.3:$PATH" \
     exec \
     external/com_arm_developer_toolchain_gcc_rtems/bin/arm-rtems4.11-gcc \
     "$@"
