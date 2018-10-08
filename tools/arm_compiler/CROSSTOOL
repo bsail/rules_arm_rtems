@@ -51,7 +51,9 @@ toolchain {
   # compiler_flag: "-fshort-wchar"
   compiler_flag: "-fdata-sections"
   compiler_flag: "-ffunction-sections"
-  compiler_flag: "-std=c11"
+  compiler_flag: "-std=gnu11"
+  # compiler_flag: "-nostdlib"
+  # linker_flag: "-nostdlib"
 
   # cxx_flag: "-I"
   # cxx_flag: "external/com_arm_developer_toolchain_gcc_rtems/arm-rtems4.11/include/c++/4.9.3/arm-rtems4.11"
@@ -87,6 +89,7 @@ toolchain {
   linker_flag: "-march=armv7-m"
   linker_flag: "-mthumb"
   # linker_flag: "-specs=nosys.specs"
+  # linker_flag: "-specs=bsp_specs"
   # linker_flag: "-lstdc++"
 
   linker_flag: "-Lexternal/com_arm_developer_toolchain_gcc_rtems/arm-rtems4.11/lib/thumb/"
@@ -119,7 +122,7 @@ toolchain {
   # All warnings are enabled. Maybe enable -Werror as well?
   compiler_flag: "-Wall"
   compiler_flag: "-Wextra"
-  compiler_flag: "-pedantic"
+  # compiler_flag: "-pedantic"
   # compiler_flag: "-Werror"
   # Enable a few more warnings that aren't part of -Wall.
   compiler_flag: "-Wunused-but-set-parameter"
@@ -136,6 +139,7 @@ toolchain {
   linker_flag: "-Wl,--gc-sections"
 
   compiler_flag: "-Os"
+  # linker_flag: "-nostdinc"
 
   compilation_mode_flags {
     mode: DBG
