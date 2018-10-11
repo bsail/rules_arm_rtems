@@ -1,6 +1,6 @@
-# Bazel Rules for embeded ARM Cortex processors for RTEMS operation system version 4.11 #
+# Bazel Rules for embeded ARM Cortex processors for RTEMS 4.11 #
 
-* Toolchain: arm-rtems4.11-gcc from RTEMS Source Builder, branch 4.11
+* Toolchain: arm-rtems4.11-gcc from [RTEMS Source Builder](https://devel.rtems.org/wiki/Developer/Tools/RSB), branch 4.11
 
 ## Usage
 
@@ -23,11 +23,11 @@ http_archive(
 ## Available Rules
 
 
-### raw_binary ###
+### raw_binary_rtems ###
 Generates a .bin file
 
 ```
-load("@arm_rtems//tools/arm_compiler:raw_binary.bzl", "raw_binary")
+load("@arm_rtems//tools/arm_compiler:raw_binary.bzl", "raw_binary_rtems")
 
 raw_binary_rtems(
     name = "my_bin",
@@ -35,11 +35,11 @@ raw_binary_rtems(
 )
 ```
 
-### hex_binary ###
+### hex_binary_rtems ###
 Generates a .hex file
 
 ```
-load("@arm_rtems//tools/arm_compiler:raw_binary.bzl", "hex_binary")
+load("@arm_rtems//tools/arm_compiler:raw_binary.bzl", "hex_binary_rtems")
 
 hex_binary_rtems(
     name = "my_hex",
