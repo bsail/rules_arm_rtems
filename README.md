@@ -1,4 +1,4 @@
-# Bazel Rules for embeded ARM Cortex processors #
+# Bazel Rules for embeded ARM Cortex processors for RTEMS operation system version 4.11 #
 
 * Toolchain: arm-rtems4.11-gcc from RTEMS Source Builder, branch 4.11
 
