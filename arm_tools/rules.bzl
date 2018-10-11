@@ -4,6 +4,5 @@ def arm_rtems_repository(arch="linux"):
             name = "com_arm_developer_toolchain_gcc_rtems",
             build_file = str(Label("//compilers:arm_rtems4.11_gcc.BUILD")),
             strip_prefix = "arm-rtems4.11-gcc-strip",
-            url = "https://bsail.ru/download/arm-rtems4.11-gcc.zip",
-            # sha256 = "d6c29bb191158a7d3a3c4c9e441dcddecdf97c50fb8aa3770a0376d2984f0892",
+            url = "<some path to your build binutils>",
         )
