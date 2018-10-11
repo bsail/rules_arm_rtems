@@ -1,20 +1,23 @@
 # Bazel Rules for embeded ARM Cortex processors #
 
-* Toolchain: arm-none-eabi-gcc 5.4.1 from [https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads]
+* Toolchain: arm-rtems4.11-gcc from RTEMS Source Builder, branch 4.11
 
 ## Usage
 
 On `WORKSPACE` add this for linux:
 
 ```
-git_repository(
-    name = "arm_embedded",
-    remote = "https://github.com/mpthompson/rules_arm_embedded.git",
-    commit = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+http_archive(
+    name = "arm_rtems",
+    strip_prefix = "rules_arm_rtems-master",
+    url = "https://github.com/bsail/rules_arm_rtems/archive/master.zip",
     )
 
-load("@arm_embedded//arm_tools:rules.bzl", "arm_none_repository")
-arm_none_repository()
+http_archive(
+    name = "com_arm_developer_toolchain_gcc_rtems",
+    strip_prefix = "arm-rtems4.11",
+    url = "<your gcc binutils url>",
+    )
 ``` 
 
 ## Available Rules
@@ -24,9 +27,9 @@ arm_none_repository()
 Generates a .bin file
 
 ```
-load("@arm_embedded//tools/arm_compiler:raw_binary.bzl", "raw_binary")
+load("@arm_rtems//tools/arm_compiler:raw_binary.bzl", "raw_binary")
 
-raw_binary(
+raw_binary_rtems(
     name = "my_bin",
     src = ":binary"
 )
@@ -36,9 +39,9 @@ raw_binary(
 Generates a .hex file
 
 ```
-load("@arm_embedded//tools/arm_compiler:raw_binary.bzl", "hex_binary")
+load("@arm_rtems//tools/arm_compiler:raw_binary.bzl", "hex_binary")
 
-hex_binary(
+hex_binary_rtems(
     name = "my_hex",
     src = ":binary"
 )
